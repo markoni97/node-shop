@@ -1,0 +1,27 @@
+.card {
+  background-color: #ffffff;
+  border-radius: .8rem;
+  padding: 1rem 1rem;
+  max-width: 400px;
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.20);
+  margin: 1.5rem;
+}
+
+.card__header {
+  text-align: center;
+  color: #400D51;
+}
+
+.card__image {
+  text-align: center;
+}
+
+.card__content {
+  padding: .5rem 1rem;
+  text-align: center;
+}
+
+.card__actions {
+ display: flex;
+ justify-content: center;
+}

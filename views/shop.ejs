@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/card.css">
+  </head>
+
+  <body>
+    <%- include('includes/navigation.ejs') %>
+    <main>
+      <% if(prods.length > 0) { %>
+        <% for (let product of prods) { %>
+        <article class="card">
+          <header class="card__header">
+            <h1><%= product.title %></h1>
+          </header>
+          <div class="card__image">
+            <img src="/images/mx-master.png" alt="Logitech MX Master 3"/>
+          </div>
+          <div class="card__content">
+            <h2>$102.00</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="card__actions">
+            <button class="card__actions__btn">Add to cart</button>
+          </div>
+        </article>
+        <% } %>
+      <% } else { %>
+        <h2>There are no products</h1>
+      <% } %>
+    </main>
+  </body>
+</html>
