@@ -25,3 +25,9 @@
  display: flex;
  justify-content: center;
 }
+
+.product-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
