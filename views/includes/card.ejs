@@ -1,0 +1,25 @@
+<article class="card">
+  <div class="card__image">
+    <img src="<%= product.prodImage %>" alt="Logitech MX Master 3" />
+  </div>
+  <header class="card__header">
+    <h1><%= product.title %></h1>
+  </header>
+  
+  <div class="card__content">
+    <h2>$<%= product.price %></h2>
+    <p><%= product.description %></p>
+  </div>
+  <div class="card__actions">
+    <% if(path === '/admin/products') { %>
+      <a class="btn btn-secondary" href="/admin/edit-product">Edit</a>
+      <form action="/admin/delete-product/:id" method="POST">
+        <button class="btn btn-danger" type="submit">Delete</button>
+      </form>
+    <% } else { %>
+      <form action="/add-to-cart">
+        <button class="btn btn-primary" type="submit">Add to cart</button>
+      </form>
+    <% } %>
+  </div>
+</article>

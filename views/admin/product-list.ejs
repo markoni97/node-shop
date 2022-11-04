@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All products</title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/card.css">
+</head>
+<body>
+  <%- include('../includes/navigation.ejs') %>
+    <main class="product-grid">
+      <% if(prods.length > 0) { %>
+        <% for (let product of prods) { %>
+        <%-  include('../includes/card.ejs', {product: product}) %>
+        <% } %>
+      <% } else { %>
+        <h2>There are no products</h1>
+      <% } %>
+    </main>
+</body>
+</html>

@@ -10,7 +10,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
 }
 
 .main-header {
@@ -44,17 +44,41 @@ main {
   text-decoration: none;
 }
 
-button {
+.btn {
   border: none;
   border-radius: 0.5rem;
   padding: 0.5rem;
-  background-color: #f806cc;
-  color: white;
   font-size: 1.2rem;
+  text-decoration: none;
 }
 
-button:hover {
+.btn-primary {
+  background-color: #A91079;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #2e0249;
+  cursor: pointer;
+}
+
+.btn-secondary {
   background-color: #FFF600;
   color: #2e0249;
+}
+
+.btn-secondary:hover {
+  background-color: #FDDA0D;
+  color: #2e0249;
+  cursor: pointer;
+}
+
+.btn-danger {
+  background-color: red;
+  color: #ffffff;
+}
+
+.btn-danger:hover {
+  background-color: #7c0000;
   cursor: pointer;
 }
