@@ -1,17 +1,20 @@
 [
   {
+    "id": 1,
     "title": "Steelseries Arctis Pro",
     "prodImage": "https://prosettings.net/wp-content/uploads/2019/04/ssarctispropng.png",
     "description": "This is a random description",
     "price": "180"
   },
   {
+    "id": 2,
     "title": "Mx Master 3",
     "prodImage": "https://img.gigatron.rs/img/products/large/image5d94634d76519.png",
     "description": "This i another random description. Should have used lorem ipsum..",
     "price": "120"
   },
   {
+    "id": 3,
     "title": "Iphone 13",
     "prodImage": "https://ezone-electronics.online/wp-content/uploads/2021/12/iphone-13-pink-select-2021.png",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",

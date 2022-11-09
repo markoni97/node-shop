@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/layout/header.css" />
+    <link rel="stylesheet" href="/css/pages/product-detail.css" />
+    <link rel="stylesheet" href="/css/components/button.css">
+  </head>
+  <body>
+    <%- include('../includes/navigation.ejs') %>
+    <main class="container mt-large">
+      <div class="product">
+        <div class="product__image">
+          <img src="<%= product.prodImage %>" />
+        </div>
+        <div class="product__details">
+          <h1><%= product.title %></h1>
+          <p><%= product.description %></p>
+          <p class="product__details__price">Price: $<%= product.price %></p>
+          <form action="/cart" method="POST">
+            <button class="btn btn-primary" type="submit">Add to cart</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

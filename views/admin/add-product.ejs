@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title><%= pageTitle %></title>
     <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/product.css" />
+    <link rel="stylesheet" href="/css/layout/header.css" />
+    <link rel="stylesheet" href="/css/pages/add-product.css" />
+    <link rel="stylesheet" href="/css/components/button.css">
   </head>
 
   <body>
     <%- include('../includes/navigation.ejs') %>
-    <main>
+    <main class="container mt-large">
       <form class="product-form" action="/admin/add-product" method="POST">
         <div class="form-control">
           <label for="title">Product title</label>
@@ -49,7 +51,7 @@
             id="description"
           ></textarea>
         </div>
-        <button type="submit">Add Product</button>
+        <button class="btn btn-primary" type="submit">Add Product</button>
       </form>
     </main>
   </body>

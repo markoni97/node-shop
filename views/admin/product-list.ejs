@@ -6,11 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>All products</title>
   <link rel="stylesheet" href="/css/main.css" />
-  <link rel="stylesheet" href="/css/card.css">
+  <link rel="stylesheet" href="/css/layout/header.css" />
+  <link rel="stylesheet" href="/css/components/card.css">
+  <link rel="stylesheet" href="/css/components/button.css">
 </head>
 <body>
   <%- include('../includes/navigation.ejs') %>
-    <main class="product-grid">
+    <main class="container mt-large">
       <% if(prods.length > 0) { %>
         <% for (let product of prods) { %>
         <%-  include('../includes/card.ejs', {product: product}) %>

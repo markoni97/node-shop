@@ -1,84 +1,24 @@
-body {
+* {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: sans-serif;
   background-color: #f5f5f5;
 }
 
-main {
-  margin: 5rem 2rem;
+.container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: stretch;
-}
-
-.main-header {
-  background-color: #2E0249;
-  font-size: 1.2rem;
-}
-
-.main-header__nav {
-  padding: .1rem;
-}
-
-.main-header__item-list {
-  list-style: none;
-  display: flex;
   align-items: center;
 }
 
-.main-header__item {
- margin: 0 1rem;
+.row {
+  flex-direction: row;
 }
 
-.main-header__item a {
-  color: #F806CC;
-  text-decoration: none;
-}
-
-.main-header__item a:hover,
-.main-header__item a:active,
-.main-header__item a.active {
-  color: #FFF600;
-  text-decoration: none;
-}
-
-.btn {
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  font-size: 1.2rem;
-  text-decoration: none;
-}
-
-.btn-primary {
-  background-color: #A91079;
-  color: #ffffff;
-}
-
-.btn-primary:hover {
-  background-color: #2e0249;
-  cursor: pointer;
-}
-
-.btn-secondary {
-  background-color: #FFF600;
-  color: #2e0249;
-}
-
-.btn-secondary:hover {
-  background-color: #FDDA0D;
-  color: #2e0249;
-  cursor: pointer;
-}
-
-.btn-danger {
-  background-color: red;
-  color: #ffffff;
-}
-
-.btn-danger:hover {
-  background-color: #7c0000;
-  cursor: pointer;
+.mt-large {
+  margin-top: 5rem;
 }

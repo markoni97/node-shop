@@ -17,7 +17,8 @@ exports.getAddProduct = (req, res, next) => {
 
 exports.postAddProduct = (req, res, next) => {
   const { title, prodImage, description, price } = req.body;
-  const product = new Product(title, prodImage, description, price);
+  const id = Math.floor(Math.random() * 100_000);
+  const product = new Product(id, title, prodImage, description, price);
   product.save();
   res.redirect('/');
 };

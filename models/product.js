@@ -6,7 +6,8 @@ const file = require('../util/file');
 const p = path.join(root, 'data', 'products.json');
 
 module.exports = class Product {
-  constructor(title, prodImage, description, price) {
+  constructor(id, title, prodImage, description, price) {
+    this.id = id;
     this.title = title;
     this.prodImage = prodImage;
     this.description = description;
@@ -24,5 +25,10 @@ module.exports = class Product {
 
   static async fetchAll() {
     return await file.getDataFromFile(p);
+  }
+
+  static async fetchProduct(id) {
+    const products = await file.getDataFromFile(p);
+    return products.find((item) => item.id === id);
   }
 };
