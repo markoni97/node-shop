@@ -1,34 +1,46 @@
-const fs = require('fs');
-const path = require('path');
-const root = require('../util/path');
-const file = require('../util/file');
-
-const p = path.join(root, 'data', 'products.json');
-
+const mongodb = require('mongodb');
+const getDb = require('../util/database').getDb;
 module.exports = class Product {
-  constructor(id, title, prodImage, description, price) {
-    this.id = id;
+  constructor(title, prodImage, description, quantity, price, id) {
     this.title = title;
     this.prodImage = prodImage;
     this.description = description;
+    this.quantity = quantity;
     this.price = price;
+    this._id = id ? new mongodb.ObjectId(id) : null;
   }
 
-  async save() {
-    const products = await file.getDataFromFile(p);
-    console.log(this);
-    products.push(this);
-    fs.writeFile(p, JSON.stringify(products), (err) => {
-      console.log(err);
-    });
+  save() {
+    const db = getDb();
+    let dbOps;
+
+    if (this._id) {
+      dbOps = db
+        .collection('products')
+        .updateOne({ _id: this._id }, { $set: this });
+    } else {
+      dbOps = db.collection('products').insertOne(this);
+    }
+    return dbOps;
   }
 
-  static async fetchAll() {
-    return await file.getDataFromFile(p);
+  static fetchAll() {
+    const db = getDb();
+    return db.collection('products').find().toArray();
   }
 
-  static async fetchProduct(id) {
-    const products = await file.getDataFromFile(p);
-    return products.find((item) => item.id === id);
+  static fetchProduct(id) {
+    const db = getDb();
+    return db
+      .collection('products')
+      .find({ _id: new mongodb.ObjectId(id) })
+      .next();
+  }
+
+  static delete(id) {
+    const db = getDb();
+    return db
+      .collection('products')
+      .deleteOne({ _id: new mongodb.ObjectId(id) });
   }
 };

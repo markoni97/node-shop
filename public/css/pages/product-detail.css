@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  max-width: 1080px;
   background-color: #ffffff;
   border-radius: 0.8rem;
   padding: 2rem;
@@ -15,6 +16,8 @@
 }
 
 .product__image img {
+  width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -23,10 +26,15 @@
   padding-left: 2rem;
 }
 
-.product__details button {
-  margin-top: 2rem;
+.product__details h1 {
+  margin-bottom: 2rem;
 }
 
 .product__details__price {
   font-weight: 700;
+  margin: 1rem 0;
+}
+
+.product__details button {
+  margin-top: 2rem;
 }

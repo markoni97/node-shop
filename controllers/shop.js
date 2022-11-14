@@ -4,25 +4,33 @@ exports.getHomePage = (req, res, next) => {
   res.render('shop/index.ejs', { path: '/', pageTitle: 'Tech Shop' });
 };
 
-exports.getProducts = async (req, res, next) => {
-  const products = await Product.fetchAll();
-  res.render('shop/product-list.ejs', {
-    pageTitle: 'Shop',
-    prods: products,
-    path: '/products',
-  });
+exports.getProducts = (req, res, next) => {
+  Product.fetchAll()
+    .then((result) => {
+      res.render('shop/product-list.ejs', {
+        pageTitle: 'Shop',
+        prods: result,
+        path: '/products',
+      });
+    })
+    .catch((err) => console.log(err));
 };
 
-exports.getProduct = async (req, res, next) => {
+exports.getProduct = (req, res, next) => {
   const id = req.params.productId;
-  const product = await Product.fetchProduct(parseInt(id));
-  res.render('shop/product-detail.ejs', {
-    product: product,
-    pageTitle: `Tech Shop | ${product.title}`,
-    path: '/products',
-  });
+  Product.fetchProduct(id)
+    .then((result) => {
+      res.render('shop/product-detail.ejs', {
+        product: result,
+        pageTitle: `Tech Shop | ${result.title}`,
+        path: '/products',
+      });
+    })
+    .catch((err) => console.log(err));
 };
 
 exports.getCart = (req, res, next) => {
   res.render('shop/cart.ejs', { path: '/cart' });
 };
+
+exports.postCart = (req, res, next) => {};

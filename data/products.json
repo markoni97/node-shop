@@ -4,20 +4,31 @@
     "title": "Steelseries Arctis Pro",
     "prodImage": "https://prosettings.net/wp-content/uploads/2019/04/ssarctispropng.png",
     "description": "This is a random description",
-    "price": "180"
+    "quantity": 15,
+    "price": 180
   },
   {
     "id": 2,
     "title": "Mx Master 3",
     "prodImage": "https://img.gigatron.rs/img/products/large/image5d94634d76519.png",
     "description": "This i another random description. Should have used lorem ipsum..",
-    "price": "120"
+    "quantity": 18,
+    "price": 120
   },
   {
     "id": 3,
     "title": "Iphone 13",
     "prodImage": "https://ezone-electronics.online/wp-content/uploads/2021/12/iphone-13-pink-select-2021.png",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-    "price": "910"
+    "quantity": 10,
+    "price": 910
+  },
+  {
+    "id": 46814,
+    "title": "MacBook Pro",
+    "prodImage": "https://istyle.hu/media/wysiwyg/HU/landing-pages/preselection/mbp-13-sg.jpeg",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
+    "quantity": "12",
+    "price": "750"
   }
 ]

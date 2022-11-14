@@ -7,19 +7,17 @@
     <title><%= pageTitle %></title>
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/layout/header.css" />
-    <link rel="stylesheet" href="/css/components/card.css">
-    <link rel="stylesheet" href="/css/components/button.css">
+    <link rel="stylesheet" href="/css/components/card.css" />
+    <link rel="stylesheet" href="/css/components/button.css" />
   </head>
 
   <body>
     <%- include('../includes/navigation.ejs') %>
     <main class="container mt-large">
-      <% if(prods.length > 0) { %>
-        <% for (let product of prods) { %>
-        <%-  include('../includes/card.ejs', {product: product}) %>
-        <% } %>
-      <% } else { %>
-        <h2>There are no products</h1>
+      <% if(prods.length > 0) { %> <% for (let product of prods) { %> <%-
+      include('../includes/card.ejs', {product: product}) %> <% } %> <% } else {
+      %>
+      <h2>There are no products</h2>
       <% } %>
     </main>
   </body>

@@ -1,6 +1,7 @@
 .banner {
   position: relative;
   height: 94vh;
+  align-items: center;
 }
 
 .banner__image {
@@ -43,6 +44,7 @@
   font-weight: 700;
   color: #2e0249;
   transition: all .5s;
+  filter: drop-shadow(0 0 0.75rem #F806CC);
 }
 
 .banner__content:hover {

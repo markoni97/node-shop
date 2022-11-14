@@ -1,0 +1,57 @@
+<form class="product-form" action="<%= action %>" method="POST">
+  <div class="form-control">
+    <label for="title">Product title</label>
+    <input
+      class="form-control__input"
+      type="text"
+      name="title"
+      id="title"
+      value="<%= product ? product.title : '' %>"
+    />
+  </div>
+  <div class="form-control">
+    <label for="prodImage">Image URL</label>
+    <input
+      class="form-control__input"
+      type="text"
+      name="prodImage"
+      id="prodImage"
+      value="<%= product ? product.prodImage : '' %>"
+    />
+  </div>
+  <div class="form-control">
+    <label for="quantity">Quantity</label>
+    <input
+      class="form-control__input"
+      type="number"
+      name="quantity"
+      id="quantity"
+      value="<%= product ? product.quantity : '' %>"
+    />
+  </div>
+  <div class="form-control">
+    <label for="price">Price</label>
+    <input
+      class="form-control__input"
+      type="number"
+      name="price"
+      id="price"
+      value="<%= product ? product.price : '' %>"
+    />
+  </div>
+  <div class="form-control">
+    <label for="description">Description</label>
+    <textarea
+      class="form-control__input"
+      rows="5"
+      name="description"
+      id="description"
+    >
+<%= product ? product.description : '' %>
+    </textarea>
+  </div>
+  <% if(product) { %>
+  <input type="hidden" name="productId" value="<%= product._id %>" />
+  <% } %>
+  <button class="btn btn-primary" type="submit"><%= btnLabel %></button>
+</form>

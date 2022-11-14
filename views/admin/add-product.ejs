@@ -8,51 +8,14 @@
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/layout/header.css" />
     <link rel="stylesheet" href="/css/pages/add-product.css" />
-    <link rel="stylesheet" href="/css/components/button.css">
+    <link rel="stylesheet" href="/css/components/button.css" />
   </head>
 
   <body>
     <%- include('../includes/navigation.ejs') %>
     <main class="container mt-large">
-      <form class="product-form" action="/admin/add-product" method="POST">
-        <div class="form-control">
-          <label for="title">Product title</label>
-          <input
-            class="form-control__input"
-            type="text"
-            name="title"
-            id="title"
-          />
-        </div>
-        <div class="form-control">
-          <label for="prodImage">Image URL</label>
-          <input
-            class="form-control__input"
-            type="text"
-            name="prodImage"
-            id="prodImage"
-          />
-        </div>
-        <div class="form-control">
-          <label for="price">Price</label>
-          <input
-            class="form-control__input"
-            type="number"
-            name="price"
-            id="price"
-          />
-        </div>
-        <div class="form-control">
-          <label for="description">Description</label>
-          <textarea
-            class="form-control__input"
-            rows="5"
-            name="description"
-            id="description"
-          ></textarea>
-        </div>
-        <button class="btn btn-primary" type="submit">Add Product</button>
-      </form>
+      <%- include('../includes/product-form.ejs', {btnLabel: 'Add Product',
+      action: '/admin/add-product', product: null}) %>
     </main>
   </body>
 </html>
